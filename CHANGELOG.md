@@ -1,3 +1,7 @@
+## 0.0.2
+
+* Fix platform initialization
+
 ## 0.0.1 - Initial version
 
 * read from URL

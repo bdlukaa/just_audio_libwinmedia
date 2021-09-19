@@ -9,7 +9,7 @@ class LibWinMediaJustAudioPlugin extends JustAudioPlatform {
   final Map<String, LibWinMediaAudioPlayer> players = {};
 
   /// The entrypoint called by the generated plugin registrant.
-  static void register() {
+  static void registerWith() {
     LWM.initialize();
     JustAudioPlatform.instance = LibWinMediaJustAudioPlugin();
   }
