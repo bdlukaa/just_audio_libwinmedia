@@ -26,3 +26,6 @@ flutter:
       windows:
         pluginClass: none
         dartPluginClass: LibWinMediaJustAudioPlugin
+      linux:
+        pluginClass: none
+        dartPluginClass: LibWinMediaJustAudioPlugin

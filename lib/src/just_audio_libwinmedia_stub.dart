@@ -1,3 +1,3 @@
 class LibWinMediaJustAudioPlugin {
-  static void registerWith() {}
+  static void register() {}
 }
