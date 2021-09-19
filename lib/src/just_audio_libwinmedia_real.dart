@@ -59,18 +59,22 @@ class LibWinMediaAudioPlayer extends AudioPlayerPlatform {
     final indexStream = player.streams.index.listen(_handlePlaybackEvent);
     streamSubscriptions.add(indexStream);
     final bufferingStream = player.streams.isBuffering.listen((buffering) {
-      _processingState = ProcessingStateMessage.buffering;
+      if (buffering) {
+        _processingState = ProcessingStateMessage.buffering;
+      }
       _handlePlaybackEvent(buffering);
     });
     streamSubscriptions.add(bufferingStream);
-    final completedStream = player.streams.isCompleted.listen((buffering) {
-      _processingState = ProcessingStateMessage.completed;
-      _handlePlaybackEvent(buffering);
+    final completedStream = player.streams.isCompleted.listen((completed) {
+      if (completed) {
+        _processingState = ProcessingStateMessage.completed;
+      }
+      _handlePlaybackEvent(completed);
     });
     streamSubscriptions.add(completedStream);
-    final playingStream = player.streams.isPlaying.listen((buffering) {
-      _processingState = ProcessingStateMessage.buffering;
-      _handlePlaybackEvent(buffering);
+    final playingStream = player.streams.isPlaying.listen((playing) {
+      _processingState = ProcessingStateMessage.ready;
+      _handlePlaybackEvent(playing);
     });
     streamSubscriptions.add(playingStream);
     final mediasStream = player.streams.medias.listen(_handlePlaybackEvent);

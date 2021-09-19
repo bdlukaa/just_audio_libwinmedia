@@ -1,5 +1,6 @@
 ## 0.0.2
 
+* Only trigger events when they are `true`
 * Fix platform initialization
 
 ## 0.0.1 - Initial version
