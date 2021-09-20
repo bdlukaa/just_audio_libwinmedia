@@ -90,8 +90,7 @@ class LibWinMediaAudioPlayer extends AudioPlayerPlatform {
       processingState: _processingState,
       updatePosition: player.position,
       updateTime: updateTime,
-      // TODO(windows): buffered position
-      bufferedPosition: Duration.zero,
+      bufferedPosition: player.bufferingProgress,
       // TODO(windows): Icy Metadata
       icyMetadata: null,
       duration: player.state.duration,
@@ -187,12 +186,33 @@ class LibWinMediaAudioPlayer extends AudioPlayerPlatform {
 
   @override
   Future<SetLoopModeResponse> setLoopMode(SetLoopModeRequest request) async {
+    switch (request.loopMode) {
+      case LoopModeMessage.one:
+        player.isLooping = true;
+        break;
+      case LoopModeMessage.all:
+        player.autoRepeat = true;
+        player.isLooping = false;
+        break;
+      case LoopModeMessage.off:
+        player.isLooping = false;
+        player.autoRepeat = false;
+        break;
+    }
     return SetLoopModeResponse();
   }
 
   @override
   Future<SetShuffleModeResponse> setShuffleMode(
       SetShuffleModeRequest request) async {
+    switch (request.shuffleMode) {
+      case ShuffleModeMessage.all:
+        player.shuffleEnabled = true;
+        break;
+      case ShuffleModeMessage.none:
+        player.shuffleEnabled = false;
+        break;
+    }
     return SetShuffleModeResponse();
   }
 
