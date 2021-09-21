@@ -12,8 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   just_audio_platform_interface: ^4.0.0
-  libwinmedia: # ^0.0.4
-    path: ../libwinmedia/flutter
+  libwinmedia: ^0.0.5
+    # path: ../libwinmedia/flutter
 
 dev_dependencies:
   flutter_test:

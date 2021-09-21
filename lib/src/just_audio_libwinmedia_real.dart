@@ -90,7 +90,8 @@ class LibWinMediaAudioPlayer extends AudioPlayerPlatform {
       processingState: _processingState,
       updatePosition: player.position,
       updateTime: updateTime,
-      bufferedPosition: player.bufferingProgress,
+      // TODO(windows): Buffered position
+      bufferedPosition: Duration.zero,
       // TODO(windows): Icy Metadata
       icyMetadata: null,
       duration: player.state.duration,
