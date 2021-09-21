@@ -2,6 +2,7 @@
 
 * Only trigger events when they are `true`
 * Fix platform initialization
+* Auto repeat playlist and shuffle playlist
 
 ## 0.0.1 - Initial version
 
