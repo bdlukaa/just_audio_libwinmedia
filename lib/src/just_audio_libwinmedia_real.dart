@@ -44,6 +44,7 @@ class LibWinMediaAudioPlayer extends AudioPlayerPlatform {
   final _dataEventController = StreamController<PlayerDataMessage>.broadcast();
   ProcessingStateMessage _processingState = ProcessingStateMessage.idle;
   Player player;
+  double bufferingProgress = 0;
 
   LibWinMediaAudioPlayer(String id)
       : player = Player(id: _id),
@@ -85,13 +86,15 @@ class LibWinMediaAudioPlayer extends AudioPlayerPlatform {
 
   /// Broadcasts a playback event from the platform side to the plugin side.
   void broadcastPlaybackEvent() {
+    if (player.downloadProgress != null) {
+      bufferingProgress = player.downloadProgress!;
+    }
     final updateTime = DateTime.now();
     _eventController.add(PlaybackEventMessage(
       processingState: _processingState,
       updatePosition: player.position,
       updateTime: updateTime,
-      // TODO(windows): Buffered position
-      bufferedPosition: Duration.zero,
+      bufferedPosition: player.state.duration * bufferingProgress.clamp(0, 1),
       // TODO(windows): Icy Metadata
       icyMetadata: null,
       duration: player.state.duration,

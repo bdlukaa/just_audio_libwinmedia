@@ -1,3 +1,7 @@
+## 0.0.3
+
+* `downloadProgress`
+
 ## 0.0.2
 
 * Only trigger events when they are `true`
