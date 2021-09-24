@@ -1,6 +1,7 @@
 ## 0.0.3
 
 * `downloadProgress`
+* Trigger loading state when opening the media
 
 ## 0.0.2
 

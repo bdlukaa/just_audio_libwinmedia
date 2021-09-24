@@ -146,6 +146,7 @@ class LibWinMediaAudioPlayer extends AudioPlayerPlatform {
   /// Loads an audio source.
   @override
   Future<LoadResponse> load(LoadRequest request) {
+    _processingState = ProcessingStateMessage.loading;
     final medias = _loadAudioMessage(request.audioSourceMessage);
     player.open(medias);
     return Future.value(LoadResponse(duration: null));
