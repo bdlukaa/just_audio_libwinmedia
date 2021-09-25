@@ -1,6 +1,6 @@
 name: just_audio_libwinmedia
 description: Libwinmedia implementation of just_audio. This implementation is endorsed and therefore doesn't require a direct dependency.
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/bdlukaa/just_audio_libwinmedia
 homepage: https://github.com/ryanheise/just_audio
 
@@ -12,8 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   just_audio_platform_interface: ^4.0.0
-  libwinmedia: # ^0.0.5
-     path: ../libwinmedia/flutter
+  libwinmedia: ^0.0.6
+  #   path: ../libwinmedia/flutter
 
 dev_dependencies:
   flutter_test:
