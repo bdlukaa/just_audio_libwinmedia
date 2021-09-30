@@ -14,28 +14,28 @@ dependencies:
 
 ## Features
 
-| Feature                        | Windows |
-| ------------------------------ | :-----: |
-| read from URL                  |   ✅    |
-| read from file                 |   ✅    |
-| read from asset                |   ✅    |
-| read from byte stream          |         |
-| request headers                |         |
-| DASH                           |   ✅    |
-| HLS                            |   ✅    |
-| ICY metadata                   |         |
-| buffer status/position         |   ✅    |
-| play/pause/seek                |   ✅    |
-| set volume/speed               |   ✅    |
-| clip audio                     |         |
-| playlists                      |   ✅    |
-| looping/shuffling              |   ✅    |
-| compose audio                  |         |
-| gapless playback               |   ✅    |
-| report player errors           |         |
-| handle phonecall interruptions |         |
-| buffering/loading options      |         |
-| set pitch                      |         |
-| skip silence                   |         |
-| equalizer                      |         |
-| volume boost                   |         |
+| Feature                        | Windows | Linux |
+| ------------------------------ | :-----: | :---: |
+| read from URL                  |   ✅    |  ✅   |
+| read from file                 |   ✅    |  ✅   |
+| read from asset                |   ✅    |  ✅   |
+| read from byte stream          |         |       |
+| request headers                |         |       |
+| DASH                           |   ✅    |       |
+| HLS                            |   ✅    |       |
+| ICY metadata                   |         |       |
+| buffer status/position         |   ✅    |       |
+| play/pause/seek                |   ✅    |  ✅   |
+| set volume/speed               |   ✅    |  ✅   |
+| clip audio                     |         |       |
+| playlists                      |   ✅    |  ✅   |
+| looping/shuffling              |   ✅    |       |
+| compose audio                  |         |       |
+| gapless playback               |   ✅    |       |
+| report player errors           |         |       |
+| handle phonecall interruptions |         |       |
+| buffering/loading options      |         |       |
+| set pitch                      |         |       |
+| skip silence                   |         |       |
+| equalizer                      |         |       |
+| volume boost                   |         |       |
