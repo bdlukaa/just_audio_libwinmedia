@@ -82,6 +82,19 @@ class LibWinMediaAudioPlayer extends AudioPlayerPlatform {
     streamSubscriptions.add(mediasStream);
     final positionStream = player.streams.position.listen(_handlePlaybackEvent);
     streamSubscriptions.add(positionStream);
+    final errorStream = player.streams.error.listen((error) {
+      if (error == null) return;
+      switch (error.code) {
+        case PlayerErrorCode.aborted:
+          throw PlatformException(code: 'abort', message: error.message);
+        default:
+          throw PlatformException(
+            code: '${error.code.index}',
+            message: error.message,
+          );
+      }
+    });
+    streamSubscriptions.add(errorStream);
   }
 
   /// Broadcasts a playback event from the platform side to the plugin side.
