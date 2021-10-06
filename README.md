@@ -24,15 +24,15 @@ dependencies:
 | DASH                           |   ✅    |       |
 | HLS                            |   ✅    |       |
 | ICY metadata                   |         |       |
-| buffer status/position         |   ✅    |       |
+| buffer status/position         |   ✅    |  ✅   |
 | play/pause/seek                |   ✅    |  ✅   |
 | set volume/speed               |   ✅    |  ✅   |
 | clip audio                     |         |       |
 | playlists                      |   ✅    |  ✅   |
-| looping/shuffling              |   ✅    |       |
+| looping/shuffling              |   ✅    |  ✅   |
 | compose audio                  |         |       |
 | gapless playback               |   ✅    |       |
-| report player errors           |         |       |
+| report player errors           |   ✅    |  ✅   |
 | handle phonecall interruptions |         |       |
 | buffering/loading options      |         |       |
 | set pitch                      |         |       |

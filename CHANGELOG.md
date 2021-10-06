@@ -1,3 +1,8 @@
+## 0.0.4
+
+* buffer status/position, looping/shuffling support for Linux
+* report player errors for both Windows and Linux
+
 ## 0.0.3
 
 * `downloadProgress`
