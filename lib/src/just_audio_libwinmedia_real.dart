@@ -196,12 +196,12 @@ class LibWinMediaAudioPlayer extends AudioPlayerPlatform {
         player.isLooping = true;
         break;
       case LoopModeMessage.all:
-        player.autoRepeat = true;
+        player.isAutoRepeat = true;
         player.isLooping = false;
         break;
       case LoopModeMessage.off:
         player.isLooping = false;
-        player.autoRepeat = false;
+        player.isAutoRepeat = false;
         break;
     }
     return SetLoopModeResponse();
@@ -212,10 +212,10 @@ class LibWinMediaAudioPlayer extends AudioPlayerPlatform {
       SetShuffleModeRequest request) async {
     switch (request.shuffleMode) {
       case ShuffleModeMessage.all:
-        player.shuffleEnabled = true;
+        player.isShuffling = true;
         break;
       case ShuffleModeMessage.none:
-        player.shuffleEnabled = false;
+        player.isShuffling = false;
         break;
     }
     return SetShuffleModeResponse();
