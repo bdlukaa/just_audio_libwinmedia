@@ -1,6 +1,6 @@
 name: just_audio_libwinmedia
 description: Libwinmedia implementation of just_audio. This implementation is endorsed and therefore doesn't require a direct dependency.
-version: 0.0.3
+version: 0.0.4
 repository: https://github.com/bdlukaa/just_audio_libwinmedia
 homepage: https://github.com/ryanheise/just_audio
 
