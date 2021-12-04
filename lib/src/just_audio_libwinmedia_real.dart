@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:just_audio_platform_interface/just_audio_platform_interface.dart';
 import 'package:flutter/services.dart';
@@ -47,7 +48,7 @@ class LibWinMediaAudioPlayer extends AudioPlayerPlatform {
   double bufferingProgress = 0;
 
   LibWinMediaAudioPlayer(String id)
-      : player = Player(id: _id),
+      : player = Player(id: _id, startLoop: !Platform.isLinux),
         super(id) {
     _id++;
 
@@ -162,7 +163,13 @@ class LibWinMediaAudioPlayer extends AudioPlayerPlatform {
     _processingState = ProcessingStateMessage.loading;
     final medias = _loadAudioMessage(request.audioSourceMessage);
     player.open(medias);
-    return Future.value(LoadResponse(duration: null));
+    return Future.microtask(() {
+      // Set state to buffering
+      _processingState = ProcessingStateMessage.buffering;
+      broadcastPlaybackEvent();
+
+      return LoadResponse(duration: null);
+    });
   }
 
   /// Plays the current audio source at the current index and position.
