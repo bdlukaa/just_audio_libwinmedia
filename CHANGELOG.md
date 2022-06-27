@@ -1,3 +1,7 @@
+## 0.0.4+1
+
+- Package discontinued
+
 ## 0.0.4
 
 * buffer status/position, looping/shuffling support for Linux
